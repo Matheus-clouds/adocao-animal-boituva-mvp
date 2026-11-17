@@ -1,0 +1,24 @@
+name: Monitoramento de disponibilidade
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  uptime:
+    name: Verificar site publicado
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check site and report incidents
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          SITE_URL: https://matheus-clouds.github.io/adocao-animal-boituva-mvp/
+        run: python .github/scripts/check_uptime.py

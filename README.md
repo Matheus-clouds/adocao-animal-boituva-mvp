@@ -46,3 +46,7 @@ node --experimental-test-coverage --test tests/validation.test.js tests/flow.int
 ```
 
 A suíte utiliza o test runner nativo do Node.js e apresenta no terminal o resultado dos testes e a cobertura dos arquivos JavaScript exercitados. O fluxo de integração usa DOM simulado; o protótipo ainda não possui backend nem persistência.
+
+## Monitoramento de disponibilidade
+
+O workflow `Monitoramento de disponibilidade` consulta a página pública do GitHub Pages a cada 15 minutos e também pode ser executado manualmente na aba **Actions**. Uma resposta HTTP bem-sucedida registra `UP`; se a consulta falhar, o workflow registra `DOWN`, falha a execução e abre um issue de incidente no repositório. Quando uma execução posterior confirma a recuperação, o workflow comenta e fecha o issue. O monitor usa o `GITHUB_TOKEN` temporário do próprio Actions com permissão limitada a issues; não requer serviço pago nem segredo adicional. As notificações do issue dependem das preferências de notificação do GitHub do usuário.
