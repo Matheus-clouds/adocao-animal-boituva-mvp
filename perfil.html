@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#256b4b">
+  <meta name="description" content="Conheça o perfil de Luna e demonstre interesse em adoção responsável em Boituva.">
+  <title>Perfil da Luna — Adoção Animal Boituva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="interest-validation.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Adoção Animal Boituva — catálogo">
+      <span class="brand-mark" aria-hidden="true">●</span>
+      <span><strong>ADOÇÃO ANIMAL</strong><small>Boituva • projeto comunitário</small></span>
+    </a>
+    <a class="header-link" href="index.html">Catálogo</a>
+  </header>
+
+  <main>
+    <section class="view" id="profile" data-view="profile" aria-labelledby="profile-title">
+      <a class="button button-back" href="index.html#animais">‹ Voltar ao catálogo</a>
+      <h1 id="profile-title" tabindex="-1">Perfil do animal</h1>
+      <article class="animal-summary">
+        <div class="animal-art compact" role="img" aria-label="Ilustração de um cão caramelo chamado Luna"><span aria-hidden="true">🐶</span></div>
+        <div><h2>Luna</h2><p>Cão • porte médio • 2 anos</p><p class="status"><span class="status-dot" aria-hidden="true">●</span> Disponível</p><p>Carinhosa e pronta para conhecer uma família.</p></div>
+      </article>
+      <section class="profile-details" aria-labelledby="details-title">
+        <h2 id="details-title">Sobre a Luna</h2>
+        <p class="muted">Informações principais para conhecer o animal antes de demonstrar interesse.</p>
+        <dl class="profile-facts">
+          <div><dt>Espécie</dt><dd>Cão</dd></div>
+          <div><dt>Porte</dt><dd>Médio</dd></div>
+          <div><dt>Idade aproximada</dt><dd>2 anos</dd></div>
+          <div><dt>Situação</dt><dd><span class="status-dot" aria-hidden="true">●</span> Disponível</dd></div>
+        </dl>
+        <aside class="contact-note"><strong>Próximo passo</strong><p>Envie seu interesse para que a equipe possa conversar com você sobre a adoção responsável.</p></aside>
+      </section>
+      <form id="interest-form" novalidate>
+        <h2>Demonstrar interesse</h2>
+        <p class="muted">Preencha seus dados para que a equipe possa entrar em contato sobre a adoção.</p>
+        <div class="field"><label for="full-name">Nome completo <span>(obrigatório)</span></label><input id="full-name" name="name" autocomplete="name" placeholder="Digite seu nome completo" required></div>
+        <div class="field"><label for="phone">Telefone <span>(obrigatório)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ex.: (15) 99999-0000" required></div>
+        <div class="field"><label for="email">E-mail <span>(opcional)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com"></div>
+        <p class="privacy-note">Seus dados serão usados pela equipe somente para contato sobre este interesse. Este protótipo não envia nem armazena dados.</p>
+        <div class="check-row"><input id="contact-ok" name="contact-ok" type="checkbox" required><label for="contact-ok">Confirmo que posso ser contatado(a) sobre a adoção da Luna.</label></div>
+        <p class="form-error" id="form-error" role="alert" aria-live="assertive" tabindex="-1" hidden></p>
+        <button class="button button-primary full" type="submit">Enviar interesse</button>
+        <a class="button button-secondary full" href="index.html#animais">Cancelar e voltar ao catálogo</a>
+      </form>
+    </section>
+    <section class="view" id="result" data-view="result" aria-labelledby="result-title" hidden>
+      <a class="button button-back" href="index.html#animais">‹ Catálogo</a>
+      <h1 id="result-title" tabindex="-1">Resultado do envio</h1>
+      <div class="success-panel" role="status" aria-live="polite"><span class="success-icon" aria-hidden="true">✓</span><h2>Interesse registrado</h2><p>Sua manifestação foi registrada nesta demonstração.</p><p class="muted">Os dados pessoais não aparecem nesta confirmação.</p></div>
+      <article class="result-card"><p class="eyebrow">ANIMAL SELECIONADO</p><h2>Luna</h2><p>Cão • porte médio • 2 anos</p><p class="status"><span class="status-dot" aria-hidden="true">●</span> Status: interesse recebido</p></article>
+      <article class="next-step"><h2>O que acontece agora?</h2><p>A equipe poderá entrar em contato pelos dados informados para conversar sobre os próximos passos da adoção.</p></article>
+      <a class="button button-primary full" href="index.html#animais">Ver outros animais</a>
+      <a class="button button-secondary full" href="index.html#animais">Voltar ao catálogo</a>
+    </section>
+  </main>
+  <footer><span>Protótipo acadêmico • dados de demonstração</span><span>Boituva</span></footer>
+</body>
+</html>

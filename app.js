@@ -17,10 +17,14 @@ document.querySelectorAll('[data-show]').forEach((control) => {
   });
 });
 
-document.querySelector('#staff-link').addEventListener('click', () => {
-  document.querySelector('#staff-note').hidden = false;
-  document.querySelector('#staff-note').focus?.();
-});
+const staffLink = document.querySelector('#staff-link');
+if (staffLink) {
+  staffLink.addEventListener('click', () => {
+    const staffNote = document.querySelector('#staff-note');
+    staffNote.hidden = false;
+    staffNote.focus?.();
+  });
+}
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
