@@ -58,20 +58,34 @@
         <div class="animal-art compact" role="img" aria-label="Ilustração de um cão caramelo chamado Luna"><span aria-hidden="true">🐶</span></div>
         <div><h2>Luna</h2><p>Cão • porte médio • 2 anos</p><p class="status"><span class="status-dot" aria-hidden="true">●</span> Disponível</p><p>Carinhosa e pronta para conhecer uma família.</p></div>
       </article>
+      <section class="profile-details" aria-labelledby="details-title">
+        <h2 id="details-title">Sobre a Luna</h2>
+        <p class="muted">Informações principais para conhecer o animal antes de demonstrar interesse.</p>
+        <dl class="profile-facts">
+          <div><dt>Espécie</dt><dd>Cão</dd></div>
+          <div><dt>Porte</dt><dd>Médio</dd></div>
+          <div><dt>Idade aproximada</dt><dd>2 anos</dd></div>
+          <div><dt>Situação</dt><dd><span class="status-dot" aria-hidden="true">●</span>Disponível</dd></div>
+        </dl>
+        <aside class="contact-note">
+          <strong>Próximo passo</strong>
+          <p>Envie seu interesse para que a equipe possa conversar com você sobre a adoção responsável.</p>
+        </aside>
+      </section>
       <form id="interest-form" novalidate>
         <h2>Demonstrar interesse</h2>
         <p class="muted">Preencha seus dados para que a equipe possa entrar em contato sobre a adoção.</p>
         <div class="field">
           <label for="full-name">Nome completo <span>(obrigatório)</span></label>
-          <input id="full-name" name="name" autocomplete="name" required>
+          <input id="full-name" name="name" autocomplete="name" placeholder="Digite seu nome completo" required>
         </div>
         <div class="field">
           <label for="phone">Telefone <span>(obrigatório)</span></label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ex.: (15) 99999-0000" required>
         </div>
         <div class="field">
           <label for="email">E-mail <span>(opcional)</span></label>
-          <input id="email" name="email" type="email" autocomplete="email">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com">
         </div>
         <p class="privacy-note">Seus dados serão usados pela equipe somente para contato sobre este interesse. Este protótipo não envia nem armazena dados.</p>
         <div class="check-row">
