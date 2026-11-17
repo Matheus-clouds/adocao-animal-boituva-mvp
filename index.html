@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#256b4b">
+  <meta name="description" content="Protótipo acadêmico de consulta e interesse em adoção animal em Boituva.">
+  <title>Adoção Animal — Boituva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" data-show="home" aria-label="Adoção Animal Boituva — início">
+      <span class="brand-mark" aria-hidden="true">●</span>
+      <span><strong>ADOÇÃO ANIMAL</strong><small>Boituva • projeto comunitário</small></span>
+    </a>
+    <a class="header-link" href="#inicio" data-show="home">Início</a>
+  </header>
+
+  <main>
+    <section class="view" id="home" data-view="home" aria-labelledby="home-title">
+      <div class="hero">
+        <p class="eyebrow">CATÁLOGO DE ANIMAIS</p>
+        <h1 id="home-title" tabindex="-1">Encontre seu novo companheiro.</h1>
+        <p>Conheça os animais disponíveis para adoção responsável em Boituva.</p>
+        <a class="button button-primary" href="#animais">Ver animais disponíveis</a>
+      </div>
+      <section class="catalog" id="animais" aria-labelledby="catalog-title">
+        <h2 id="catalog-title">Animais disponíveis</h2>
+        <p class="muted">Veja o perfil e demonstre interesse.</p>
+        <article class="animal-card">
+          <div class="animal-art" role="img" aria-label="Ilustração de um cão caramelo chamado Luna">
+            <span aria-hidden="true">🐶</span>
+            <small>Ilustração demonstrativa</small>
+          </div>
+          <div class="animal-info">
+            <h3>Luna</h3>
+            <p>Cão • porte médio • 2 anos</p>
+            <p class="status"><span class="status-dot" aria-hidden="true">●</span> Disponível</p>
+            <p>Carinhosa e pronta para conhecer uma família.</p>
+            <button class="button button-primary full" type="button" data-show="profile">Ver perfil</button>
+          </div>
+        </article>
+      </section>
+      <aside class="team-card">
+        <div><h2>É da equipe da Zoonoses?</h2><p>Acesse a área de gestão de animais.</p></div>
+        <button class="button button-secondary" type="button" id="staff-link">Acesso da equipe</button>
+      </aside>
+      <p class="notice" id="staff-note" role="status" hidden>Área da equipe prevista para uma próxima etapa; o acesso ainda não está implementado.</p>
+    </section>
+
+    <section class="view" id="profile" data-view="profile" aria-labelledby="profile-title" hidden>
+      <button class="button button-back" type="button" data-show="home">‹ Voltar ao catálogo</button>
+      <h1 id="profile-title" tabindex="-1">Perfil do animal</h1>
+      <article class="animal-summary">
+        <div class="animal-art compact" role="img" aria-label="Ilustração de um cão caramelo chamado Luna"><span aria-hidden="true">🐶</span></div>
+        <div><h2>Luna</h2><p>Cão • porte médio • 2 anos</p><p class="status"><span class="status-dot" aria-hidden="true">●</span> Disponível</p><p>Carinhosa e pronta para conhecer uma família.</p></div>
+      </article>
+      <form id="interest-form" novalidate>
+        <h2>Demonstrar interesse</h2>
+        <p class="muted">Preencha seus dados para que a equipe possa entrar em contato sobre a adoção.</p>
+        <div class="field">
+          <label for="full-name">Nome completo <span>(obrigatório)</span></label>
+          <input id="full-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Telefone <span>(obrigatório)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail <span>(opcional)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+        <p class="privacy-note">Seus dados serão usados pela equipe somente para contato sobre este interesse. Este protótipo não envia nem armazena dados.</p>
+        <div class="check-row">
+          <input id="contact-ok" name="contact-ok" type="checkbox" required>
+          <label for="contact-ok">Confirmo que posso ser contatado(a) sobre a adoção da Luna.</label>
+        </div>
+        <p class="form-error" id="form-error" role="alert" aria-live="assertive" hidden></p>
+        <button class="button button-primary full" type="submit">Enviar interesse</button>
+        <button class="button button-secondary full" type="button" data-show="home">Cancelar e voltar ao catálogo</button>
+      </form>
+    </section>
+
+    <section class="view" id="result" data-view="result" aria-labelledby="result-title" hidden>
+      <button class="button button-back" type="button" data-show="home">‹ Catálogo</button>
+      <h1 id="result-title" tabindex="-1">Resultado do envio</h1>
+      <div class="success-panel" role="status" aria-live="polite">
+        <span class="success-icon" aria-hidden="true">✓</span>
+        <h2>Interesse registrado</h2>
+        <p>Sua manifestação foi enviada à equipe.</p>
+        <p class="muted">Os dados pessoais não aparecem nesta confirmação.</p>
+      </div>
+      <article class="result-card">
+        <p class="eyebrow">ANIMAL SELECIONADO</p>
+        <h2>Luna</h2>
+        <p>Cão • porte médio • 2 anos</p>
+        <p class="status"><span class="status-dot" aria-hidden="true">●</span> Status: interesse recebido</p>
+      </article>
+      <article class="next-step"><h2>O que acontece agora?</h2><p>A equipe poderá entrar em contato pelos dados informados para conversar sobre os próximos passos da adoção.</p></article>
+      <button class="button button-primary full" type="button" data-show="home">Ver outros animais</button>
+      <button class="button button-secondary full" type="button" data-show="home">Voltar ao catálogo</button>
+    </section>
+  </main>
+  <footer><span>Protótipo acadêmico • dados de demonstração</span><span>Boituva</span></footer>
+</body>
+</html>
+
