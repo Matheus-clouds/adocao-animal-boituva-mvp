@@ -7,6 +7,7 @@
   <meta name="description" content="Protótipo acadêmico de consulta e interesse em adoção animal em Boituva.">
   <title>Adoção Animal — Boituva</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="interest-validation.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -47,7 +48,7 @@
         <div><h2>É da equipe da Zoonoses?</h2><p>Acesse a área de gestão de animais.</p></div>
         <button class="button button-secondary" type="button" id="staff-link">Acesso da equipe</button>
       </aside>
-      <p class="notice" id="staff-note" role="status" hidden>Área da equipe prevista para uma próxima etapa; o acesso ainda não está implementado.</p>
+      <p class="notice" id="staff-note" role="status" tabindex="-1" hidden>Área da equipe prevista para uma próxima etapa; o acesso ainda não está implementado.</p>
     </section>
 
     <section class="view" id="profile" data-view="profile" aria-labelledby="profile-title" hidden>
@@ -77,7 +78,7 @@
           <input id="contact-ok" name="contact-ok" type="checkbox" required>
           <label for="contact-ok">Confirmo que posso ser contatado(a) sobre a adoção da Luna.</label>
         </div>
-        <p class="form-error" id="form-error" role="alert" aria-live="assertive" hidden></p>
+        <p class="form-error" id="form-error" role="alert" aria-live="assertive" tabindex="-1" hidden></p>
         <button class="button button-primary full" type="submit">Enviar interesse</button>
         <button class="button button-secondary full" type="button" data-show="home">Cancelar e voltar ao catálogo</button>
       </form>

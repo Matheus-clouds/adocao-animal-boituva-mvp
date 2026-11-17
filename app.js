@@ -1,11 +1,10 @@
 const views = [...document.querySelectorAll('[data-view]')];
 const form = document.querySelector('#interest-form');
 const errorBox = document.querySelector('#form-error');
-let lastView = 'home';
+const { validateInterest } = window.InterestValidation;
 
 function showView(name) {
   views.forEach((view) => { view.hidden = view.dataset.view !== name; });
-  lastView = name;
   const heading = document.querySelector(`#${name}-title`);
   if (heading) heading.focus();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -30,11 +29,13 @@ form.addEventListener('submit', (event) => {
   const phone = form.elements.phone.value.trim();
   const email = form.elements.email.value.trim();
   const consent = form.elements['contact-ok'].checked;
-  let message = '';
-  if (!name) message = 'Informe seu nome completo para continuar.';
-  else if (!phone) message = 'Informe seu telefone para que a equipe possa entrar em contato.';
-  else if (email && !form.elements.email.validity.valid) message = 'Confira o formato do e-mail ou deixe o campo em branco.';
-  else if (!consent) message = 'Marque a confirmação de contato para enviar seu interesse.';
+  const message = validateInterest({
+    name,
+    phone,
+    email,
+    emailValid: form.elements.email.validity.valid,
+    consent,
+  });
   if (message) {
     errorBox.textContent = message;
     errorBox.hidden = false;

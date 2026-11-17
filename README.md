@@ -37,3 +37,12 @@ O link “Acesso da equipe” informa que autenticação e gestão interna serã
 Implementar o backend previsto em Python/Django, autenticação da equipe, persistência relacional, validação no servidor e os controles de segurança definidos no planejamento. Não use este protótipo para coletar dados reais.
 
 
+# Testes automatizados
+
+Com Node.js 24, execute os testes unitários e de integração do fluxo de interesse com:
+
+```sh
+node --experimental-test-coverage --test tests/validation.test.js tests/flow.integration.test.js
+```
+
+A suíte utiliza o test runner nativo do Node.js e apresenta no terminal o resultado dos testes e a cobertura dos arquivos JavaScript exercitados. O fluxo de integração usa DOM simulado; o protótipo ainda não possui backend nem persistência.
