@@ -7,6 +7,7 @@
   <meta name="description" content="Conheça o perfil de Luna e demonstre interesse em adoção responsável em Boituva.">
   <title>Perfil da Luna — Adoção Animal Boituva</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="accessibility.js" defer></script>
   <script src="interest-validation.js" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -16,7 +17,14 @@
       <span class="brand-mark" aria-hidden="true">●</span>
       <span><strong>ADOÇÃO ANIMAL</strong><small>Boituva • projeto comunitário</small></span>
     </a>
-    <a class="header-link" href="index.html">Catálogo</a>
+    <div class="header-actions">
+      <div class="accessibility-tools" aria-label="Recursos de acessibilidade">
+        <button class="accessibility-control" id="text-toggle" type="button" aria-pressed="false">A+ Texto ampliado</button>
+        <button class="accessibility-control" id="contrast-toggle" type="button" aria-pressed="false">Alto contraste</button>
+        <span class="visually-hidden" id="accessibility-status" role="status" aria-live="polite"></span>
+      </div>
+      <a class="header-link" href="index.html">Catálogo</a>
+    </div>
   </header>
 
   <main>
